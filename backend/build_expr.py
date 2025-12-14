@@ -2,9 +2,23 @@
 import json
 import os
 
-print(os.getcwd())
 
-with open("example.json") as f:
+def strOr(a, b):
+    return ("" + a + " + " + b)
+
+def strAnd(a, b):
+    return ("" + a + " * " + b)
+
+def strNot(a):
+    return ( "!" + a)
+
+j = 0
+
+with open("example.json", encoding="utf-8") as f:
     circuit = json.load(f)
 
-print(circuit)
+for i in circuit.get("gates"):
+    if ((circuit.get("gates")[j]["type"]) == "NOT"):
+        print ( "!" + circuit.get("gates")[2]["in"][0])
+    j = j+1
+
