@@ -1,10 +1,11 @@
 {
-    "inputs": ["A", "B", "C"],
+    "inputs": ["A", "B", "C", "D"],
     "gates": 
     [
-           { "id": "g1", "type": "AND", "in": ["A", "B"] },
-           { "id": "g2", "type": "OR", "in": ["C", "D"] },
-           { "id": "g3", "type": "NOT", "in": ["E"] }
-    ],
-    "output": "g3"
+        { "id": "g1", "type": "AND", "in": ["g3", "g4"] },
+        { "id": "g2", "type": "OR", "in": ["C", "D"] },
+        { "id": "g3", "type": "NOT", "in": ["g2"] },
+        { "id": "g4", "type": "AND", "in": ["B", "D"] },
+        { "id": "g5", "type": "OR", "in": ["C", "D"]}
+    ]
 }
